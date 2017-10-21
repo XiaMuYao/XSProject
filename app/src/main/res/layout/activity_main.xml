@@ -4,13 +4,124 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xsproject.xsproject.MainActivity">
+    tools:context="com.xsproject.xsproject.UI.Activity.MainActivity">
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/MainBottomMenu"
+    <FrameLayout
+        android:id="@+id/main_fragmelayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="match_parent"
+        android:background="#85408684" />
+
+    <LinearLayout
+        android:id="@+id/bottom_llayout"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <RelativeLayout
+            android:id="@+id/main_home"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/main_home_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_tab_strip_icon_feed" />
+
+            <TextView
+                android:id="@+id/main_home_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_home_iv"
+                android:gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:text="首页"
+                android:textColor="#f0f0"
+                android:textSize="10dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_star"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/main_star_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_tab_strip_icon_follow" />
+
+            <TextView
+                android:id="@+id/main_star_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_star_iv"
+                android:gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:text="关注" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_find"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/main_find_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:src="@mipmap/ic_tab_strip_icon_category" />
+
+            <TextView
+                android:id="@+id/main_find_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_find_ic"
+                android:gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:text="发现" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_my"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/main_my_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:src="@mipmap/ic_tab_strip_icon_profile" />
+
+            <TextView
+                android:id="@+id/main_my_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_my_ic"
+                android:gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:text="发现" />
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

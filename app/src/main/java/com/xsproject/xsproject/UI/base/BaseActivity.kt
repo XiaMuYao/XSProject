@@ -1,4 +1,4 @@
-package com.xsproject.xsproject
+package com.xsproject.xsproject.UI.base
 
 import android.app.Activity
 import android.os.Bundle

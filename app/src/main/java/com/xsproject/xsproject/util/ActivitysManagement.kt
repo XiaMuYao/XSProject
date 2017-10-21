@@ -6,7 +6,7 @@ import android.graphics.Rect
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.Window
-import com.xsproject.xsproject.MainActivity
+import com.xsproject.xsproject.UI.Activity.MainActivity
 import java.util.*
 
 
