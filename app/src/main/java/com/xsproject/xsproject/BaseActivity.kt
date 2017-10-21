@@ -1,5 +1,6 @@
 package com.xsproject.xsproject
 
+import android.app.Activity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v4.app.FragmentActivity
@@ -13,11 +14,26 @@ import com.xsproject.xsproject.util.ActivitysManagement
  *
  *==========================
  */
-class BaseActivity :FragmentActivity() {
+abstract class BaseActivity :FragmentActivity() {
+
+    var mActivity: Activity? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-        ActivitysManagement.AM
+        ActivitysManagement.instance.addActivity(this)
+        setContentView(getLayout())
+        initObject(savedInstanceState!!);
+        //initTitle();
+        mActivity = this
+        //TODO loading
+
+
     }
+
+
+
+    abstract fun initObject(savedInstanceState: Bundle)
+    abstract fun getLayout(): Int
 
 }

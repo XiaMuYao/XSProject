@@ -20,45 +20,21 @@ import java.util.*
  */
 class ActivitysManagement {
 
-
-
     private var activityStack:Stack<Activity>?=null
-
-    fun addActivity(activity: Activity) {
-        activityStack!!.add(activity)
+    companion object {
+        var instance = ActivitysManagement()
     }
 
-
-//    private var activityStack: Stack<Activity>? = null
-    private var instance: ActivitysManagement? = null
-
-    object AM {
-
-    }
-
-
-    val getManagement = object : Any() {
-    }
-
-    /**
-     * 单一实例
-     */
-    fun getManagement(): ActivitysManagement {
-        if (instance == null) {
-            instance = ActivitysManagement()
-        }
-        return instance!!
-    }
 
     /**
      * 添加Activity到堆栈
      */
-//    fun addActivity(activity: Activity) {
-//        if (activityStack == null) {
-//            activityStack = Stack()
-//        }
-//        activityStack!!.add(activity)
-//    }
+    fun addActivity(activity: Activity) {
+        if (activityStack == null) {
+            activityStack = Stack()
+        }
+        activityStack!!.add(activity)
+    }
 
     /**
      * 获取当前Activity（堆栈中最后一个压入的）
@@ -120,7 +96,7 @@ class ActivitysManagement {
         if (activityStack == null)
             return null
         for (activity in activityStack!!) {
-            if (activity.javaClass.simpleName == className) {
+            if (activity.javaClass.getSimpleName() == className) {
                 return activity
             }
         }
@@ -134,8 +110,8 @@ class ActivitysManagement {
         var i = 0
         val size = activityStack!!.count()
         while (i < size) {
-            if (null != activityStack!![i]) {
-                activityStack!![i].finish()
+            if (null != activityStack!!.get(i)) {
+                activityStack!!.get(i).finish()
             }
             i++
         }
@@ -192,10 +168,10 @@ class ActivitysManagement {
             return
         for (i in 0 until activityStack!!.count()) {
             if (i == activityStack!!.count() - 1) {
-                activityStack!![i].startActivity(Intent(activityStack!![i], MainActivity::class.java))
-                activityStack!![i].finish()
+                activityStack!!.get(i).startActivity(Intent(activityStack!!.get(i), MainActivity::class.java))
+                activityStack!!.get(i).finish()
             } else {
-                activityStack!![i].finish()
+                activityStack!!.get(i).finish()
             }
         }
     }
