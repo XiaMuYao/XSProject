@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_top"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="50dp">
+    <LinearLayout
+        android:id="@+id/ll_top_left"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/img_left"
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:focusable="false"
+            android:scaleType="centerInside"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:textColor="@color/text_title"
+            android:textSize="@dimen/middle"
+            android:visibility="gone"
+            tools:text="全部分类"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:ellipsize="middle"
+        android:gravity="center"
+        android:maxEms="9"
+        android:singleLine="true"
+        android:lineSpacingExtra="3dp"
+        android:textColor="@color/text_title"
+        android:textSize="@dimen/greater_title"
+        android:visibility="gone"
+        tools:text="Discover"/>
+    <LinearLayout
+        android:id="@+id/ll_top_right1"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/img_right"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:focusable="false"
+            android:scaleType="centerInside"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/text_title"
+            android:textSize="@dimen/middle"
+            android:visibility="gone"/>
+    </LinearLayout>
+</RelativeLayout>
