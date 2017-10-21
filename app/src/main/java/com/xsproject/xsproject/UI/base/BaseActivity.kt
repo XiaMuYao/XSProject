@@ -1,4 +1,4 @@
-package com.xsproject.xsproject
+package com.xsproject.xsproject.UI.base
 
 import android.os.Bundle
 import android.os.PersistableBundle
